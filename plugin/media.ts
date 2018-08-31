@@ -1,7 +1,7 @@
 // cordova-plugin-media
 import { Injectable, NgZone } from '@angular/core';
 
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import 'rxjs/add/operator/mergeMap';
 
 import { Cordova, ZoneObservable } from '../';

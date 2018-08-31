@@ -1,6 +1,6 @@
 import { NgZone } from '@angular/core';
 
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import 'rxjs/add/operator/share';
 
 export namespace Cordova {
