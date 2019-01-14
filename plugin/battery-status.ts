@@ -3,9 +3,7 @@ import { Injectable, NgZone } from '@angular/core';
 
 import { Observable } from "rxjs";
 
-import 'rxjs/add/operator/mergeMap';
-
-import { Cordova, ZoneObservable } from '../';
+import { ZoneObservable } from '../';
 
 @Injectable()
 export class BatteryStatusService {

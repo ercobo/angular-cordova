@@ -2,7 +2,7 @@
 import { Injectable, NgZone } from '@angular/core';
 
 import { Observable } from "rxjs";
-import 'rxjs/add/operator/mergeMap';
+import { mergeMap } from 'rxjs/operators';
 
 import { Cordova, ZoneObservable } from '../';
 
@@ -35,11 +35,11 @@ export class MediaService {
     mediaError?: (error: MediaError) => void,
     mediaStatus?: (status: MediaStatus) => void
   ): Observable<any> {
-    return Cordova.deviceready.mergeMap(() =>
+    return Cordova.deviceready.pipe(mergeMap(() =>
       ZoneObservable.of(
         this.zone,
         new (<any>window).Media(src, mediaSuccess, mediaError, mediaStatus)
       )
-    );
+    ));
   }
 }

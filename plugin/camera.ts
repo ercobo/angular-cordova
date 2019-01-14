@@ -3,7 +3,7 @@ import { Injectable, NgZone } from '@angular/core';
 
 import { Observable } from "rxjs";
 
-import 'rxjs/add/operator/mergeMap';
+import { mergeMap } from 'rxjs/operators';
 
 import { Cordova, ZoneObservable } from '../';
 
@@ -72,19 +72,19 @@ export class CameraService {
 
     getPicture(options?: CameraOptions): Observable<any> {
         const opts = Object.assign({}, this.cameraDefaults, options);
-        return Cordova.deviceready.mergeMap(() => ZoneObservable.create(this.zone, (observer: any) => {
+        return Cordova.deviceready.pipe(mergeMap(() => ZoneObservable.create(this.zone, (observer: any) => {
             (<any>window).navigator.camera.getPicture((res: any) => {
                 observer.next(res);
                 observer.complete();
             }, observer.error, opts);
-        }));
+        })));
     }
     cleanup(): Observable<any> {
-        return Cordova.deviceready.mergeMap(() => ZoneObservable.create(this.zone, (observer: any) => {
+        return Cordova.deviceready.pipe(mergeMap(() => ZoneObservable.create(this.zone, (observer: any) => {
             (<any>window).navigator.camera.cleanup((res: any) => {
                 observer.next(res);
                 observer.complete();
             }, observer.error);
-        }));
+        })));
     }
 }

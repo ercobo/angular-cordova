@@ -2,13 +2,13 @@
 import { Injectable, NgZone } from '@angular/core';
 
 import { Observable } from "rxjs";
-import 'rxjs/add/operator/mergeMap';
+import { mergeMap } from 'rxjs/operators';
 
 import { Cordova, ZoneObservable } from '../';
 
 @Injectable()
 export class KeyboardService {
-    constructor(private zone: NgZone) {}
+    constructor(private zone: NgZone) { }
 
     keyboardDidShow: Observable<any> = ZoneObservable.create(this.zone, (observer: any) => {
         (<any>window).addEventListener('keyboardDidShow', observer.next, false);
@@ -41,24 +41,24 @@ export class KeyboardService {
         };
     });
     shrinkView(bool: boolean): Observable<any> {
-        return Cordova.deviceready.mergeMap(() => ZoneObservable.of(this.zone, (<any>window).Keyboard.shrinkView(bool)));
+        return Cordova.deviceready.pipe(mergeMap(() => ZoneObservable.of(this.zone, (<any>window).Keyboard.shrinkView(bool))));
     }
     hideFormAccessoryBar(bool: boolean): Observable<any> {
-        return Cordova.deviceready.mergeMap(() => ZoneObservable.of(this.zone, (<any>window).Keyboard.hideFormAccessoryBar(bool)));
+        return Cordova.deviceready.pipe(mergeMap(() => ZoneObservable.of(this.zone, (<any>window).Keyboard.hideFormAccessoryBar(bool))));
     }
     disableScrollingInShrinkView(bool: boolean): Observable<any> {
-        return Cordova.deviceready.mergeMap(() => ZoneObservable.of(this.zone, (<any>window).Keyboard.disableScrollingInShrinkView(bool)));
+        return Cordova.deviceready.pipe(mergeMap(() => ZoneObservable.of(this.zone, (<any>window).Keyboard.disableScrollingInShrinkView(bool))));
     }
     hide(): Observable<any> {
-        return Cordova.deviceready.mergeMap(() => ZoneObservable.of(this.zone, (<any>window).Keyboard.hide()));
+        return Cordova.deviceready.pipe(mergeMap(() => ZoneObservable.of(this.zone, (<any>window).Keyboard.hide())));
     }
     show(): Observable<any> {
-        return Cordova.deviceready.mergeMap(() => ZoneObservable.of(this.zone, (<any>window).Keyboard.show()));
+        return Cordova.deviceready.pipe(mergeMap(() => ZoneObservable.of(this.zone, (<any>window).Keyboard.show())));
     }
     isVisible(): Observable<any> {
-        return Cordova.deviceready.mergeMap(() => ZoneObservable.of(this.zone, (<any>window).Keyboard.isVisible()));
+        return Cordova.deviceready.pipe(mergeMap(() => ZoneObservable.of(this.zone, (<any>window).Keyboard.isVisible())));
     }
     automaticScrollToTopOnHiding(bool: boolean): Observable<any> {
-        return Cordova.deviceready.mergeMap(() => ZoneObservable.of(this.zone, (<any>window).Keyboard.automaticScrollToTopOnHiding = bool));
+        return Cordova.deviceready.pipe(mergeMap(() => ZoneObservable.of(this.zone, (<any>window).Keyboard.automaticScrollToTopOnHiding = bool)));
     }
 }

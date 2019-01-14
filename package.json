@@ -18,7 +18,7 @@
   ],
   "devDependencies": {
     "@angular/core": "~6.0.0",
-    "rxjs": "~6.1.0",
+    "rxjs": "^6.1.0",
     "rxjs-compat": "^6.3.2",
     "typescript": "^3.0.3",
     "zone.js": "~0.8.4"
