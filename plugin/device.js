@@ -12,42 +12,42 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // cordova-plugin-device
 var core_1 = require("@angular/core");
 require("rxjs/add/operator/mergeMap");
-var _1 = require("../");
-var DeviceService = (function () {
+var __1 = require("../");
+var DeviceService = /** @class */ (function () {
     function DeviceService(zone) {
         this.zone = zone;
     }
     DeviceService.prototype.platform = function () {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.of(_this.zone, window.device.platform); });
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.of(_this.zone, window.device.platform); });
     };
     DeviceService.prototype.version = function () {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.of(_this.zone, window.device.version); });
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.of(_this.zone, window.device.version); });
     };
     DeviceService.prototype.uuid = function () {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.of(_this.zone, window.device.uuid); });
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.of(_this.zone, window.device.uuid); });
     };
     DeviceService.prototype.manufacturer = function () {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.of(_this.zone, window.device.manufacturer); });
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.of(_this.zone, window.device.manufacturer); });
     };
     DeviceService.prototype.cordova = function () {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.of(_this.zone, window.device.cordova); });
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.of(_this.zone, window.device.cordova); });
     };
     DeviceService.prototype.model = function () {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.of(_this.zone, window.device.model); });
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.of(_this.zone, window.device.model); });
     };
     DeviceService.prototype.isVirtual = function () {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.of(_this.zone, window.device.isVirtual); });
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.of(_this.zone, window.device.isVirtual); });
     };
     DeviceService.prototype.serial = function () {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.of(_this.zone, window.device.serial); });
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.of(_this.zone, window.device.serial); });
     };
     DeviceService = __decorate([
         core_1.Injectable(),

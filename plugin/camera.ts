@@ -1,8 +1,14 @@
 // cordova-plugin-camera
 import { Injectable, NgZone } from '@angular/core';
 
+<<<<<<< HEAD
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/mergeMap';
+=======
+import { Observable } from "rxjs";
+
+import { mergeMap } from 'rxjs/operators';
+>>>>>>> 89043d00595128c406f6de893527e0579aeaeb0b
 
 import { Cordova, ZoneObservable } from '../';
 
@@ -71,19 +77,19 @@ export class CameraService {
 
     getPicture(options?: CameraOptions): Observable<any> {
         const opts = Object.assign({}, this.cameraDefaults, options);
-        return Cordova.deviceready.mergeMap(() => ZoneObservable.create(this.zone, (observer: any) => {
+        return Cordova.deviceready.pipe(mergeMap(() => ZoneObservable.create(this.zone, (observer: any) => {
             (<any>window).navigator.camera.getPicture((res: any) => {
                 observer.next(res);
                 observer.complete();
             }, observer.error, opts);
-        }));
+        })));
     }
     cleanup(): Observable<any> {
-        return Cordova.deviceready.mergeMap(() => ZoneObservable.create(this.zone, (observer: any) => {
+        return Cordova.deviceready.pipe(mergeMap(() => ZoneObservable.create(this.zone, (observer: any) => {
             (<any>window).navigator.camera.cleanup((res: any) => {
                 observer.next(res);
                 observer.complete();
             }, observer.error);
-        }));
+        })));
     }
 }

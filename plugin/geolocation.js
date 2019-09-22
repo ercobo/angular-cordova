@@ -12,20 +12,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // cordova-plugin-geolocation
 var core_1 = require("@angular/core");
 require("rxjs/add/operator/mergeMap");
-var _1 = require("../");
+var __1 = require("../");
 var PositionError;
 (function (PositionError) {
     PositionError[PositionError["PERMISSION_DENIED"] = 0] = "PERMISSION_DENIED";
     PositionError[PositionError["POSITION_UNAVAILABLE"] = 1] = "POSITION_UNAVAILABLE";
     PositionError[PositionError["TIMEOUT"] = 2] = "TIMEOUT";
 })(PositionError = exports.PositionError || (exports.PositionError = {}));
-var GeolocationService = (function () {
+var GeolocationService = /** @class */ (function () {
     function GeolocationService(zone) {
         this.zone = zone;
     }
     GeolocationService.prototype.getCurrentPosition = function () {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.create(_this.zone, function (observer) {
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.create(_this.zone, function (observer) {
             window.navigator.geolocation.getCurrentPosition(function (res) {
                 observer.next(res);
                 observer.complete();
@@ -34,7 +34,7 @@ var GeolocationService = (function () {
     };
     GeolocationService.prototype.watchPosition = function (options) {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.create(_this.zone, function (observer) {
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.create(_this.zone, function (observer) {
             var watchID = window.navigator.geolocation.watchPosition(function (res) {
                 observer.next(res);
             }, observer.error, options);

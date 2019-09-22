@@ -12,14 +12,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // cordova-plugin-firebase
 var core_1 = require("@angular/core");
 require("rxjs/add/operator/mergeMap");
-var _1 = require("../");
-var FirebaseService = (function () {
+var __1 = require("../");
+var FirebaseService = /** @class */ (function () {
     function FirebaseService(zone) {
         this.zone = zone;
     }
     FirebaseService.prototype.getToken = function () {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.create(_this.zone, function (observer) {
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.create(_this.zone, function (observer) {
             window.FirebasePlugin.getToken(function (res) {
                 observer.next(res);
                 observer.complete();
@@ -28,7 +28,7 @@ var FirebaseService = (function () {
     };
     FirebaseService.prototype.onNotificationOpen = function () {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.create(_this.zone, function (observer) {
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.create(_this.zone, function (observer) {
             window.FirebasePlugin.onNotificationOpen(function (res) {
                 observer.next(res);
             }, observer.error);
@@ -36,7 +36,7 @@ var FirebaseService = (function () {
     };
     FirebaseService.prototype.onTokenRefresh = function () {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.create(_this.zone, function (observer) {
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.create(_this.zone, function (observer) {
             window.FirebasePlugin.onTokenRefresh(function (res) {
                 observer.next(res);
             }, observer.error);
@@ -44,7 +44,7 @@ var FirebaseService = (function () {
     };
     FirebaseService.prototype.grantPermission = function () {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.create(_this.zone, function (observer) {
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.create(_this.zone, function (observer) {
             window.FirebasePlugin.grantPermission(function (res) {
                 observer.next(res);
                 observer.complete();
@@ -53,7 +53,7 @@ var FirebaseService = (function () {
     };
     FirebaseService.prototype.setBadgeNumber = function (number) {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.create(_this.zone, function (observer) {
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.create(_this.zone, function (observer) {
             window.FirebasePlugin.setBadgeNumber(number, function (res) {
                 observer.next(res);
                 observer.complete();
@@ -62,7 +62,7 @@ var FirebaseService = (function () {
     };
     FirebaseService.prototype.getBadgeNumber = function () {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.create(_this.zone, function (observer) {
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.create(_this.zone, function (observer) {
             window.FirebasePlugin.getBadgeNumber(function (res) {
                 observer.next(res);
                 observer.complete();
@@ -71,7 +71,7 @@ var FirebaseService = (function () {
     };
     FirebaseService.prototype.subscribe = function (topic) {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.create(_this.zone, function (observer) {
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.create(_this.zone, function (observer) {
             window.FirebasePlugin.subscribe(topic, function (res) {
                 observer.next(res);
                 observer.complete();
@@ -80,7 +80,7 @@ var FirebaseService = (function () {
     };
     FirebaseService.prototype.unsubscribe = function (topic) {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.create(_this.zone, function (observer) {
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.create(_this.zone, function (observer) {
             window.FirebasePlugin.unsubscribe(topic, function (res) {
                 observer.next(res);
                 observer.complete();
@@ -89,7 +89,7 @@ var FirebaseService = (function () {
     };
     FirebaseService.prototype.logEvent = function (name, params) {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.create(_this.zone, function (observer) {
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.create(_this.zone, function (observer) {
             window.FirebasePlugin.logEvent(name, params, function (res) {
                 observer.next(res);
                 observer.complete();
@@ -98,7 +98,7 @@ var FirebaseService = (function () {
     };
     FirebaseService.prototype.setUserId = function (id) {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.create(_this.zone, function (observer) {
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.create(_this.zone, function (observer) {
             window.FirebasePlugin.setUserId(id, function (res) {
                 observer.next(res);
                 observer.complete();
@@ -107,7 +107,7 @@ var FirebaseService = (function () {
     };
     FirebaseService.prototype.setUserProperty = function (name, value) {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.create(_this.zone, function (observer) {
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.create(_this.zone, function (observer) {
             window.FirebasePlugin.setUserProperty(name, value, function (res) {
                 observer.next(res);
                 observer.complete();
@@ -116,7 +116,7 @@ var FirebaseService = (function () {
     };
     FirebaseService.prototype.fetch = function () {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.create(_this.zone, function (observer) {
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.create(_this.zone, function (observer) {
             window.FirebasePlugin.fetch(function (res) {
                 observer.next(res);
                 observer.complete();
@@ -125,7 +125,7 @@ var FirebaseService = (function () {
     };
     FirebaseService.prototype.activateFetched = function () {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.create(_this.zone, function (observer) {
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.create(_this.zone, function (observer) {
             window.FirebasePlugin.activateFetched(function (res) {
                 observer.next(res);
                 observer.complete();
@@ -134,7 +134,7 @@ var FirebaseService = (function () {
     };
     FirebaseService.prototype.getValue = function (key) {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.create(_this.zone, function (observer) {
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.create(_this.zone, function (observer) {
             window.FirebasePlugin.getValue(key, function (res) {
                 observer.next(res);
                 observer.complete();
@@ -143,7 +143,7 @@ var FirebaseService = (function () {
     };
     FirebaseService.prototype.getByteArray = function (key) {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.create(_this.zone, function (observer) {
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.create(_this.zone, function (observer) {
             window.FirebasePlugin.getByteArray(key, function (res) {
                 observer.next(res);
                 observer.complete();
@@ -152,7 +152,7 @@ var FirebaseService = (function () {
     };
     FirebaseService.prototype.getInfo = function () {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.create(_this.zone, function (observer) {
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.create(_this.zone, function (observer) {
             window.FirebasePlugin.getInfo(function (res) {
                 observer.next(res);
                 observer.complete();
@@ -161,7 +161,7 @@ var FirebaseService = (function () {
     };
     FirebaseService.prototype.setConfigSettings = function (settings) {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.create(_this.zone, function (observer) {
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.create(_this.zone, function (observer) {
             window.FirebasePlugin.setConfigSettings(settings, function (res) {
                 observer.next(res);
                 observer.complete();
@@ -170,7 +170,7 @@ var FirebaseService = (function () {
     };
     FirebaseService.prototype.setDefaults = function (defaults, namespace) {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.create(_this.zone, function (observer) {
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.create(_this.zone, function (observer) {
             window.FirebasePlugin.setDefaults(defaults, namespace, function (res) {
                 observer.next(res);
                 observer.complete();

@@ -12,18 +12,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // cordova-plugin-splashscreen
 var core_1 = require("@angular/core");
 require("rxjs/add/operator/mergeMap");
-var _1 = require("../");
-var SplashscreenService = (function () {
+var __1 = require("../");
+var SplashscreenService = /** @class */ (function () {
     function SplashscreenService(zone) {
         this.zone = zone;
     }
     SplashscreenService.prototype.hide = function () {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.of(_this.zone, window.navigator.splashscreen.hide()); });
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.of(_this.zone, window.navigator.splashscreen.hide()); });
     };
     SplashscreenService.prototype.show = function () {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.of(_this.zone, window.navigator.splashscreen.show()); });
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.of(_this.zone, window.navigator.splashscreen.show()); });
     };
     SplashscreenService = __decorate([
         core_1.Injectable(),

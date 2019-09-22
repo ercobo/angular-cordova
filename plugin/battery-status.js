@@ -12,23 +12,23 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // cordova-plugin-battery-status
 var core_1 = require("@angular/core");
 require("rxjs/add/operator/mergeMap");
-var _1 = require("../");
-var BatteryStatusService = (function () {
+var __1 = require("../");
+var BatteryStatusService = /** @class */ (function () {
     function BatteryStatusService(zone) {
         this.zone = zone;
-        this.batterystatus = _1.ZoneObservable.create(this.zone, function (observer) {
+        this.batterystatus = __1.ZoneObservable.create(this.zone, function (observer) {
             window.addEventListener('batterystatus', observer.next, false);
             return function () {
                 window.removeEventListener('batterystatus', observer.next, false);
             };
         });
-        this.batterycritical = _1.ZoneObservable.create(this.zone, function (observer) {
+        this.batterycritical = __1.ZoneObservable.create(this.zone, function (observer) {
             window.addEventListener('batterycritical', observer.next, false);
             return function () {
                 window.removeEventListener('batterycritical', observer.next, false);
             };
         });
-        this.batterylow = _1.ZoneObservable.create(this.zone, function (observer) {
+        this.batterylow = __1.ZoneObservable.create(this.zone, function (observer) {
             window.addEventListener('batterylow', observer.next, false);
             return function () {
                 window.removeEventListener('batterylow', observer.next, false);

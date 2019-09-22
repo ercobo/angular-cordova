@@ -12,14 +12,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // cordova-plugin-device-motion
 var core_1 = require("@angular/core");
 require("rxjs/add/operator/mergeMap");
-var _1 = require("../");
-var DeviceMotionService = (function () {
+var __1 = require("../");
+var DeviceMotionService = /** @class */ (function () {
     function DeviceMotionService(zone) {
         this.zone = zone;
     }
     DeviceMotionService.prototype.getCurrentAcceleration = function () {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.create(_this.zone, function (observer) {
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.create(_this.zone, function (observer) {
             window.navigator.accelerometer.getCurrentAcceleration(function (res) {
                 observer.next(res);
                 observer.complete();
@@ -28,7 +28,7 @@ var DeviceMotionService = (function () {
     };
     DeviceMotionService.prototype.watchAcceleration = function (options) {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.create(_this.zone, function (observer) {
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.create(_this.zone, function (observer) {
             var watchID = window.navigator.accelerometer.watchAcceleration(function (res) {
                 observer.next(res);
             }, observer.error, options);

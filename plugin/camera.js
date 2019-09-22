@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // cordova-plugin-camera
 var core_1 = require("@angular/core");
 require("rxjs/add/operator/mergeMap");
-var _1 = require("../");
+var __1 = require("../");
 var CameraDestinationType;
 (function (CameraDestinationType) {
     CameraDestinationType[CameraDestinationType["DATA_URL"] = 0] = "DATA_URL";
@@ -49,7 +49,7 @@ var CameraDirection;
     CameraDirection[CameraDirection["BACK"] = 0] = "BACK";
     CameraDirection[CameraDirection["FRONT"] = 1] = "FRONT";
 })(CameraDirection = exports.CameraDirection || (exports.CameraDirection = {}));
-var CameraService = (function () {
+var CameraService = /** @class */ (function () {
     function CameraService(zone) {
         this.zone = zone;
         this.cameraDefaults = {
@@ -64,7 +64,7 @@ var CameraService = (function () {
     CameraService.prototype.getPicture = function (options) {
         var _this = this;
         var opts = Object.assign({}, this.cameraDefaults, options);
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.create(_this.zone, function (observer) {
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.create(_this.zone, function (observer) {
             window.navigator.camera.getPicture(function (res) {
                 observer.next(res);
                 observer.complete();
@@ -73,7 +73,7 @@ var CameraService = (function () {
     };
     CameraService.prototype.cleanup = function () {
         var _this = this;
-        return _1.Cordova.deviceready.mergeMap(function () { return _1.ZoneObservable.create(_this.zone, function (observer) {
+        return __1.Cordova.deviceready.mergeMap(function () { return __1.ZoneObservable.create(_this.zone, function (observer) {
             window.navigator.camera.cleanup(function (res) {
                 observer.next(res);
                 observer.complete();

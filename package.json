@@ -8,7 +8,7 @@
     "url": "https://github.com/arnesson/angular-cordova"
   },
   "name": "angular-cordova",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Angular wrapper for Cordova",
   "keywords": [
     "angular",
@@ -17,10 +17,11 @@
     "ngCordova"
   ],
   "devDependencies": {
-    "@angular/core": "4.0.0",
-    "rxjs": "5.4.0",
-    "typescript": "2.4.0",
-    "zone.js": "0.8.4"
+    "@angular/core": "~6.0.0",
+    "rxjs": "^6.1.0",
+    "rxjs-compat": "^6.3.2",
+    "typescript": "^3.0.3",
+    "zone.js": "~0.8.4"
   },
   "scripts": {
     "test": "tsc",
