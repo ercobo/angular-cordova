@@ -1,12 +1,9 @@
 import { NgZone } from '@angular/core';
 
-<<<<<<< HEAD
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/share';
-=======
 import { Observable } from 'rxjs/Observable';
 import { share } from 'rxjs/operators';
->>>>>>> 89043d00595128c406f6de893527e0579aeaeb0b
 
 export namespace Cordova {
     export const platformId: string = (<any>window).cordova.platformId;
